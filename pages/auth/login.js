@@ -1,5 +1,7 @@
+import LoginForm from '../../components/LoginForm';
+
 export default function login() {
     return (
-        <p>This is login</p>
+       <LoginForm />
     )
 }
