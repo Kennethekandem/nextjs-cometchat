@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+.login-form {
+  background-color: #1cab94;
+  height: 100vh !important;
+}
