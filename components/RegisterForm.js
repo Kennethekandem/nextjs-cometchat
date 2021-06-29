@@ -1,5 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
+import { registerUser } from '../lib/auth'
 
 class RegisterForm extends React.Component {
 
@@ -11,9 +12,14 @@ class RegisterForm extends React.Component {
         this.setState({ [event.target.name] : event.target.value });
     }
 
-    handleSubmit = event => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(this.state);
+        const name = this.state.name;
+        const uid = name.replace(/\s/g, '');
+
+        let response = await registerUser(uid, name);
+        localStorage.setItem('user', JSON.stringify(response.data.data));
+        console.log(response);
     }
 
     render() {

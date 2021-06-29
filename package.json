@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@cometchat-pro/chat": "^2.3.5",
+    "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta3",
     "next": "11.0.1",
     "react": "^17.0.2",
