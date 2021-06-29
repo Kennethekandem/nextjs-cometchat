@@ -1,11 +1,10 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 
-class LoginForm extends React.Component {
+class RegisterForm extends React.Component {
 
     state = {
-        email: '',
-        password: ''
+        name: ''
     };
 
     handleChange = event => {
@@ -30,7 +29,7 @@ class LoginForm extends React.Component {
                                 </div>
                                  <div class="d-grid gap-2 mt-4">
                                     <button class="btn btn-primary btn-lg" type="submit">
-                                    Sign In
+                                    Register
                                     </button>
                                 </div>
                             </form> 
@@ -42,4 +41,4 @@ class LoginForm extends React.Component {
     }
 }
 
-export default LoginForm;
+export default RegisterForm;

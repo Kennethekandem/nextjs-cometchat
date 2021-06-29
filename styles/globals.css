@@ -18,3 +18,19 @@ a {
   background-color: #1cab94;
   height: 100vh !important;
 }
+.card {
+  margin: 10% auto 0 auto !important;
+  border: 0;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  padding: 64px 35px 110px;
+}
+.btn-primary {
+  background-color: #1ebea5 !important;
+}
+.btn {
+  border: 1px solid #1ebea5 !important;
+}
+.btn:hover {
+  background-color: #1cab94 !important;
+  border: 1px solid #1cab94;
+}
