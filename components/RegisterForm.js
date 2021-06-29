@@ -1,8 +1,10 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import { registerUser } from '../lib/auth'
-
+import Router from 'next/router'
 class RegisterForm extends React.Component {
+
+    
 
     state = {
         name: ''
@@ -18,8 +20,14 @@ class RegisterForm extends React.Component {
         const uid = name.replace(/\s/g, '');
 
         let response = await registerUser(uid, name);
-        localStorage.setItem('user', JSON.stringify(response.data.data));
-        console.log(response);
+        
+
+        if(response) {
+            localStorage.setItem('user', JSON.stringify(response.data.data));
+            // loginUser(uid);
+            Router.push('/chat');
+        }
+        
     }
 
     render() {
