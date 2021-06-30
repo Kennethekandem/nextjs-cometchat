@@ -28,6 +28,7 @@ class LoginForm extends React.Component {
                                     <input type="text" class="form-control" id="floatingInput" name="name" onChange={ this.handleChange } placeholder="Enter name" />
                                     <label for="floatingInput">Name</label>
                                 </div>
+                                <span>Don't have an account? <a href="register">Register</a></span>
                                  <div class="d-grid gap-2 mt-4">
                                     <button class="btn btn-primary btn-lg" type="submit">
                                     Sign In

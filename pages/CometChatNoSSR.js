@@ -1,6 +1,6 @@
 import { Component } from "react";
 import consts from './const';
-import { CometChatUI } from "./cometchat-pro-react-ui-kit/CometChatWorkspace/src/components/index"
+import { CometChatUI } from "../pages/cometchat-pro-react-ui-kit/CometChatWorkspace/src/components/index"
 
 export default class CometChatNoSSR extends Component {
     constructor(props) {
