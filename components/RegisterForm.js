@@ -4,8 +4,6 @@ import { registerUser } from '../lib/auth'
 import Router from 'next/router'
 class RegisterForm extends React.Component {
 
-    
-
     state = {
         name: ''
     };
@@ -24,7 +22,6 @@ class RegisterForm extends React.Component {
 
         if(response) {
             await localStorage.setItem('user', JSON.stringify(response.data.data));
-            // loginUser(uid);
             Router.push('/chat');
         }
         
