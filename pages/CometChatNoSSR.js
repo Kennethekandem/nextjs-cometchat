@@ -47,10 +47,15 @@ export default class CometChatNoSSR extends Component {
         **/
         if (this.state.user) {
             return (
-                <div style={{ width: "100vw", height: "100vh" }}><CometChatUI /></div>
+                <div style={{ width: "100vw", height: "100vh" }}>
+                    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+                          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+                          crossOrigin="anonymous"/>
+                    <CometChatUI />
+                <button class="add-button"><i class="fas fa-plus"></i></button></div>
             );
         } else {
-            return (<div>Laoding...</div>);
+            return (<div>Loading...</div>);
         }
     }
 }

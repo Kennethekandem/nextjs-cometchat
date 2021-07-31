@@ -34,3 +34,14 @@ a {
   background-color: #1cab94 !important;
   border: 1px solid #1cab94;
 }
+.add-button {
+  height: 50px;
+  width: 50px;
+  background: #1cab94;
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  border: 0;
+  border-radius: 100%;
+  color: #fff;
+}
