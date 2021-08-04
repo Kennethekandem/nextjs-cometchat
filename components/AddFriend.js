@@ -6,27 +6,43 @@ import 'bootstrap/dist/css/bootstrap.css'
 import consts from "../pages/const";
 import useAPI from '../hooks/useAPI';
 
+const addUser = async(uid)=>{
+
+    let user = JSON.parse(localStorage.getItem('user'));
+    let userId = user.uid;
+    const options = { headers: { appId: consts.APP_ID, apiKey: consts.API_KEY }};
+    const res = await axios.post(`https://api-us.cometchat.io/v2.0/users/${userId}/friends`, { accepted: [uid]}, options);
+    const data = await res.data;
+}
+
 function AddFriend() {
-    const { data, loading, error } = useAPI('?perPage=100&page=1&withTags=false');
+    const { data, loading, error } = useAPI('/users?perPage=100&page=1&withTags=false');
 
     if (loading) {
         return <li className="list-group-item">Loading...</li>
     }
     if (data) {
         return (
-            <ul className="list-group">
-                {
-                    loading ? "Loading" : (data.map((friend) => {
-                        return (
-                            <li key={friend.uid} className="list-group-item">
-                                {friend.name}
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                {friend.avatar ? <img src={friend.avatar} height={100} width={100} alt={friend.name} /> : ""}
-                            </li>)
-                    }))
-                }
+            <div className="card">
+                <div className="card-body">
+                    <ul className="list-group">
+                        {
+                            loading ? "Loading" : (data.map((friend) => {
+                                return (
 
-            </ul>
+                                <li key={friend.uid} className="list-group-item">
+                                    {friend.name}
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    {/*{friend.avatar ? <img src={friend.avatar} height={100} width={100} alt={friend.name} /> : ""}*/}
+
+                                    <button className="btn btn-primary" style={{float: 'right'}} onClick={() => addUser(friend.uid)}>Add Friend</button>
+                                </li>
+                                )
+                            }))
+                        }
+                    </ul>
+                </div>
+            </div>
         )
     }
     if (error) {

@@ -14,7 +14,7 @@ export default class CometChatNoSSR extends Component {
       /**
       Initialize CometChat
       */
-      let appSetting = new CometChat.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(consts.REGION).build();
+      let appSetting = new CometChat.AppSettingsBuilder().subscribePresenceForFriends().setRegion(consts.REGION).build();
       CometChat.init(consts.APP_ID, appSetting).then(
         () => {
           

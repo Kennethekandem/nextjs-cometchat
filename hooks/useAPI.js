@@ -18,7 +18,7 @@ export default function useAPI(url) {
            try {
             setLoading(true);
 
-            const res = await axios(`https://api-us.cometchat.io/v2.0/users${url}`,options);
+            const res = await axios(`https://api-us.cometchat.io/v2.0${url}`,options);
             const data = await res.data;
             setData(data.data);
             setLoading(false);
