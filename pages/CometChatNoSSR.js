@@ -1,6 +1,7 @@
 import { Component } from "react";
 import consts from './const';
 import { CometChatUI } from "../components/cometchat-pro-react-ui-kit/CometChatWorkspace/src/index"
+import Link from 'next/link'
 
 export default class CometChatNoSSR extends Component {
     constructor(props) {
@@ -52,7 +53,10 @@ export default class CometChatNoSSR extends Component {
                           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
                           crossOrigin="anonymous"/>
                     <CometChatUI />
-                <button className="add-button"><i className="fas fa-plus"></i></button></div>
+                    <Link href="add-friend">
+                        <button className="add-button"><i className="fas fa-plus"></i></button>
+                    </Link>
+                </div>
             );
         } else {
             return (<div>Loading...</div>);
